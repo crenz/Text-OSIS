@@ -88,6 +88,12 @@ sub parent {
     return $self->{PARENT};
 }
 
+sub parentOrSelf {
+    my ($self) = @_;
+
+    return $self->{PARENT} || $self;
+}
+
 sub add {
     my ($self, $element) = @_;
     
@@ -128,6 +134,10 @@ sub renderSubElements {
     }
     
     return $output;
+}
+
+sub isParagraph {
+    return 0;
 }
 
 

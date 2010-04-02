@@ -5,6 +5,7 @@ use strict;
 use Text::OSIS::Element;
 use Text::OSIS::Element::Verse;
 use Text::OSIS::Element::Section;
+use Text::OSIS::Element::Paragraph;
 
 our @ISA = qw(Text::OSIS::Element);
 
@@ -32,6 +33,12 @@ sub addSection {
 
     return $self->add(Text::OSIS::Element::Section->new(
         name => $text));
+}
+
+sub addParagraph {
+    my ($self, $text) = @_;
+
+    return $self->add(Text::OSIS::Element::Paragraph->new());
 }
 
 sub titleType {
